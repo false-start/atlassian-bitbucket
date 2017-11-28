@@ -1,0 +1,14 @@
+bitbucket:
+  image: gburnes/atlassian-bitbucket:5.3.1
+  environment:
+     - SERVER_PROXY_NAME=localhost
+     - SERVER_PROXY_PORT=443
+     - SERVER_REDIRECT_PORT=443
+     - SERVER_SCHEME=https
+     - SERVER_SECURE=true
+     - SERVER_CONTEXT_PATH=/
+    - ELASTICSEARCH_ENABLED=true
+  external_links:
+      - ${database_link}:database
+  volumes:
+    - ${home}:/var/atlassian/bitbucket
